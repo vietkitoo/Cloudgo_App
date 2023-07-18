@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cloudgo_app/Screens/HomeScreen.dart';
+import 'package:cloudgo_app/News/TrangChu.dart';
 
 class More extends StatefulWidget {
   const More({super.key});

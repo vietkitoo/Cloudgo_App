@@ -1,6 +1,6 @@
-import 'package:another_carousel_pro/another_carousel_pro.dart';
-import 'package:cloudgo_app/Screens/CloudSALES.dart';
 import 'package:flutter/material.dart';
+import 'package:another_carousel_pro/another_carousel_pro.dart';
+import 'package:cloudgo_app/SALES/CloudSALES.dart';
 import 'package:cloudgo_app/Screens/CloudWORK.dart';
 import 'package:cloudgo_app/Screens/CloudCAM.dart';
 import 'package:cloudgo_app/Screens/CloudCARE.dart';
@@ -9,14 +9,17 @@ import 'package:cloudgo_app/Screens/CloudCHAT.dart';
 import 'package:cloudgo_app/Screens/CloudPOS.dart';
 import 'package:cloudgo_app/Screens/More....dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+import '../SALES/BottombarSales.dart';
+
+class TrangChu extends StatefulWidget {
+  const TrangChu({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<TrangChu> createState() => _TrangChuState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _TrangChuState extends State<TrangChu> {
+
   @override
   Widget build(BuildContext context) {
 
@@ -38,6 +41,7 @@ class _HomePageState extends State<HomePage> {
       'CloudCHAT',
       'CloudPOS',
     ];
+
     int value = names.length - 7;
     int value2 = names.length;
     int check = 7;
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> {
     ];
 
     List nameScreen = [
-      const CloudSales(),
+      const CustomBottomBar(),
       const CloudWORK(),
       const CloudCAM(),
       const CloudCARE(),
@@ -87,7 +91,7 @@ class _HomePageState extends State<HomePage> {
       const CloudChat(),
       const CloudPos(),
       const More(),
-      const CloudSales(),
+      const CustomBottomBar(),
       const CloudWORK(),
       const CloudCAM(),
       const CloudCARE(),
@@ -216,6 +220,7 @@ class _HomePageState extends State<HomePage> {
                               setState(() {
                                 value = value2;
                               });
+
                             } else {
                               Navigator.push(
                                 context,
@@ -223,7 +228,6 @@ class _HomePageState extends State<HomePage> {
                                     builder: (context) => nameScreen[index]),
                               );
                             }
-                            ;
                           },
                           child: Container(
                             width: 50,
@@ -250,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 )
-                : GridView.builder(
+                    : GridView.builder(
                   itemCount: value2,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -274,7 +278,6 @@ class _HomePageState extends State<HomePage> {
                                     builder: (context) => nameScreen[index]),
                               );
                             }
-                            ;
                           },
                           child: Container(
                             width: 50,
